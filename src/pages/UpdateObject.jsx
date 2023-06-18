@@ -1,8 +1,41 @@
 import React from 'react'
 
 function UpdateObject() {
+  const [messageObj, setMessageObj] = React.useState({
+    author: '',
+    message: {
+      id: 1,
+      text: ''
+    }
+  }); // memory A
+
+  function handleChangeMessage(e) {
+    const value = e.target.value;
+    // const clonedMessgeObj = { ...messageObj }; // shallow clone
+    // clonedMessgeObj.message = value; // memory C
+    // setMessageObj(clonedMessgeObj)
+    setMessageObj(prevState => {
+      console.log('prevState: ', prevState)
+      return {
+        ...prevState, // copy all property
+        message: {
+          ...prevState.message,
+          text: value
+        }
+      }
+    })
+  }
+
+  console.log('render UpdateOjbect: ', messageObj)
+
   return (
-    <div>UpdateObject</div>
+    <div>
+      <input 
+        value={messageObj.message.text} 
+        onChange={handleChangeMessage}
+      />
+
+    </div>
   )
 }
 
@@ -19,6 +52,18 @@ export default UpdateObject
 // const objC = {
 //   lastName: 'minh'
 // };
+
+ // tham trị: so sánh các giá trị vs nhau: string, number, boolean
+//  const number = "123";
+//  const numberA = "123";
+//  console.log("tham tri: ", number === numberA)
+
+//  // tham chiếu: so sánh các vùng nhớ vs nhau: object, array, function
+//  console.log("tham chiếu: ", {
+//    sosanh1: objA === objB, // false
+//    sosanh2: objA === objD, // true
+//    sosanh3: objA === objE // false
+//  })
 
 // /* merge object
 //   - copy tat ca cac thuoc tinh cua object vs nhau (giữ nguyên)

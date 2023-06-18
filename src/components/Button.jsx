@@ -5,7 +5,7 @@ import React from 'react'
 function Button({ text = 'Submit', number = 1, handleClick }) {
   console.log('render Buton')
   return (
-    <button type="button" onClick={(handleClick)}>{text + number}</button>
+    <button type="button" onClick={handleClick}>{text + number}</button>
   )
 }
 
