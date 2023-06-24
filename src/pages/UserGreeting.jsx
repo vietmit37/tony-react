@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import Typography from "../components/Typography";
 import Button from "../components/Button";
 
-const UserGreeting = ({ setShow }) => {
-  const onShow = () => setShow(true);
+const UserGreeting = ({ toggleShow }) => {
   return (
     <div>
       <Typography content="Please Sign Up" />
-      <Button text="Login" handleClick={onShow} />
+      <Button text="Login" handleClick={toggleShow} />
     </div>
   );
 };

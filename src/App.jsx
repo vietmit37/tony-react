@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 // pages
 import ReactJSX from "./pages/ReactJSX";
 import StatefulComponent from "./pages/StatefulComponent";
@@ -9,10 +11,20 @@ import ConditionalRendering from "./pages/ConditionalRendering";
 import GuestGreeting from "./pages/GuestGreeting";
 import Props from "./pages/Props";
 import UserGreeting from "./pages/UserGreeting";
-import { useState } from "react";
+import List from "./pages/List";
+import GenerateBox from "./pages/GenerateBox";
+import LiftingStateUp from "./pages/LiftingStateUp";
+
+// components
+
+// helper
 
 function App() {
   const [show, setShow] = useState(false);
+
+  function toggleShow() {
+    setShow(prevState => !prevState); // toggle action
+  }
 
   return (
     <>
@@ -42,15 +54,23 @@ function App() {
       {show ? (
         <>
           <h1>Guest Greeting</h1>
-          <GuestGreeting setShow={setShow} />
+          <GuestGreeting toggleShow={toggleShow} />
         </>
       ) : (
         <>
           <h1>User Greeting</h1>
-          <UserGreeting setShow={setShow} />
+          <UserGreeting toggleShow={toggleShow} />
         </>
       )}
 
+      <h1>List & Keys</h1>
+      <List />
+
+      <h1>Sample App: Generate Box</h1>
+      <GenerateBox />
+
+      <h1>Lifting State Up</h1>
+      <LiftingStateUp />
       <br />
       <br />
       <br />

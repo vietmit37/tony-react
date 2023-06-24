@@ -1,10 +1,13 @@
 
-import React from 'react'
+import React from 'react';
+
+// styles
+import styles from './card.module.css';
 
 function Card() {
   console.log('render Card')
   return (
-    <div>Card</div>
+    <div className={styles.primary}>Card</div>
   )
 }
 

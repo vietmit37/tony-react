@@ -2,12 +2,11 @@ import React from "react";
 import Typography from "../components/Typography";
 import Button from "../components/Button";
 
-function GuestGreeting({ setShow }) {
-  const onShow = () => setShow(false);
+function GuestGreeting({ toggleShow }) {
   return (
     <div>
       <Typography content="Welcome to Tung" />
-      <Button text="Logout" handleClick={onShow} />
+      <Button text="Logout" handleClick={toggleShow} />
     </div>
   );
 }
