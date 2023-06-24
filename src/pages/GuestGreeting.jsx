@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Typography from "../components/Typography";
+import Button from "../components/Button";
 
-function GuestGreeting() {
+function GuestGreeting({ setShow }) {
+  const onShow = () => setShow(false);
   return (
-    <div>GuestGreeting</div>
-  )
+    <div>
+      <Typography content="Welcome to Tung" />
+      <Button text="Logout" handleClick={onShow} />
+    </div>
+  );
 }
 
-export default GuestGreeting
+export default GuestGreeting;
