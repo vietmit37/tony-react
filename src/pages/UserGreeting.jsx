@@ -1,4 +1,4 @@
-export const State = () => {
+const UserGreeting = () => {
   const [greeting, setGreeting] = useState('Hello Function Component!');
 
   return (
@@ -12,3 +12,5 @@ export const State = () => {
     </div>
   );
 };
+
+export default UserGreeting;
