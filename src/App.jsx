@@ -14,6 +14,7 @@ import UserGreeting from "./pages/UserGreeting";
 import List from "./pages/List";
 import GenerateBox from "./pages/GenerateBox";
 import LiftingStateUp from "./pages/LiftingStateUp";
+import From from './pages/Form';
 
 // components
 
@@ -71,6 +72,9 @@ function App() {
 
       <h1>Sample App: Generate Box</h1>
       <GenerateBox />
+
+      <h1>Form</h1>
+      <From />
       <br />
       <br />
       <br />
