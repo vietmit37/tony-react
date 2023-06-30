@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.container-box {
+  display: flex;
+  width: 500px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.wrapper-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}

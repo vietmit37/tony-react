@@ -23,7 +23,7 @@ function App() {
   const [show, setShow] = useState(false);
 
   function toggleShow() {
-    setShow(prevState => !prevState); // toggle action
+    setShow((prevState) => !prevState); // toggle action
   }
 
   return (
@@ -66,11 +66,11 @@ function App() {
       <h1>List & Keys</h1>
       <List />
 
-      <h1>Sample App: Generate Box</h1>
-      <GenerateBox />
-
       <h1>Lifting State Up</h1>
       <LiftingStateUp />
+
+      <h1>Sample App: Generate Box</h1>
+      <GenerateBox />
       <br />
       <br />
       <br />
