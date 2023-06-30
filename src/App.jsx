@@ -15,6 +15,7 @@ import List from "./pages/List";
 import GenerateBox from "./pages/GenerateBox";
 import LiftingStateUp from "./pages/LiftingStateUp";
 import From from './pages/Form';
+import StateHook from "./pages/StateHook";
 
 // components
 
@@ -75,6 +76,9 @@ function App() {
 
       <h1>Form</h1>
       <From />
+
+      <h1>StateHook</h1>
+      <StateHook />
       <br />
       <br />
       <br />
