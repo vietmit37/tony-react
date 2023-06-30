@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const UserGreeting = () => {
   const [greeting, setGreeting] = useState('Hello Function Component!');
 

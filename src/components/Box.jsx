@@ -3,7 +3,7 @@ import React from "react";
 //css
 import "./box.css";
 
-const Box = ({ text, handleChangeColor, color, item }) => {
+const Box = ({ text, handleChangeColor, color }) => {
   const boxStyle = {
     backgroundColor: color,
   };
@@ -12,7 +12,7 @@ const Box = ({ text, handleChangeColor, color, item }) => {
       <div
         className="wrapper-box"
         style={boxStyle}
-        onClick={() => handleChangeColor(item)}
+        onClick={handleChangeColor}
       >
         {`Box #${text + 1}`}
       </div>

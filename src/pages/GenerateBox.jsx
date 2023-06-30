@@ -5,13 +5,26 @@ import { v4 as uuidv4 } from "uuid";
 import Button from "../components/Button";
 import Box from "../components/Box";
 
+// helper
+import { getRandomColor } from "../helpers/getRandomColor";
+
 //css
 import "../components/box.css";
+
+const generateItemBoxes = (numBoxes) => {
+  const newBoxes = [];
+  for (let i = 0; i < numBoxes; i++) {
+    newBoxes.push({
+      id: uuidv4(),
+      number: i,
+    });
+  }
+  return newBoxes;
+};
 
 function GenerateBox() {
   const [listBoxes, setListBoxes] = useState([]);
   const [inputValue, setInputValue] = useState(0);
-  // const [itemBoxes, setItemBoxes] = useState([]);
 
   // Change Input
   const handleChange = (e) => {
@@ -23,26 +36,6 @@ function GenerateBox() {
     setListBoxes(generateItemBoxes(inputValue));
   };
 
-  const generateItemBoxes = (numBoxes) => {
-    const newBoxes = [];
-    for (let i = 0; i < numBoxes; i++) {
-      newBoxes.push({
-        id: uuidv4(),
-        number: i,
-      });
-    }
-    return newBoxes;
-  };
-
-  const getRandomColor = () => {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  };
-
   // Change Color with id
   const handleChangeColor = (box) => {
     const updatedItemBoxes = listBoxes.map((item) => {
@@ -51,37 +44,10 @@ function GenerateBox() {
       }
       return item;
     });
-    if (updatedItemBoxes) {
+    if (updatedItemBoxes.length > 0) {
       setListBoxes(updatedItemBoxes);
     }
-    // setItemBoxes(updatedItemBoxes);
   };
-
-  const renderBox = () => {
-    return listBoxes.map((item) => {
-      return (
-        <Fragment key={item.id}>
-          <Box
-            item={item}
-            handleChangeColor={handleChangeColor}
-            text={item.number}
-            color={item.color}
-          />
-        </Fragment>
-      );
-    });
-  };
-
-  // useEffect(() => {
-  //   let arr = [];
-  //   for (let i = 0; i < inputValue; i++) {
-  //     arr.push({
-  //       id: uuidv4(),
-  //       number: i,
-  //     });
-  //     setItemBoxes(arr);
-  //   }
-  // }, [numBox]);
 
   return (
     <>
@@ -97,7 +63,23 @@ function GenerateBox() {
         <Button text="Generated" handleClick={handleGenerate} />
         <div className="container">
           <div className="container-box">
-            {listBoxes.length === 0 ? <h1>No Data</h1> : <>{renderBox()}</>}
+            {listBoxes.length === 0 ? (
+              <h1>No Data</h1> 
+            ) : (
+              <>
+                {listBoxes.map((item) => {
+                  return (
+                    <Fragment key={item.id}>
+                      <Box
+                        handleChangeColor={() => handleChangeColor(item)}
+                        text={item.number}
+                        color={item.color}
+                      />
+                    </Fragment>
+                  );
+                })}
+              </>
+            )}
           </div>
         </div>
       </div>
