@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import Typography from "../components/Typography";
-import Button from "../components/Button";
+export const State = () => {
+  const [greeting, setGreeting] = useState('Hello Function Component!');
 
-const UserGreeting = ({ toggleShow }) => {
   return (
     <div>
-      <Typography content="Please Sign Up" />
-      <Button text="Login" handleClick={toggleShow} />
+      <h1>{greeting}</h1>
+      <input
+        type="text"
+        value={greeting}
+        onChange={event => setGreeting(event.target.value)}
+      />
     </div>
   );
 };
-
-export default UserGreeting;
