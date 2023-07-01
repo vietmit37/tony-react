@@ -16,17 +16,20 @@ import GenerateBox from "./pages/GenerateBox";
 import LiftingStateUp from "./pages/LiftingStateUp";
 import From from './pages/Form';
 import StateHook from "./pages/StateHook";
+import UseReducer from "./pages/UseReducer";
 
 // components
 
 // helper
 
 function App() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   function toggleShow() {
     setShow((prevState) => !prevState); // toggle action
   }
+
+  console.log('App Component')
 
   return (
     <>
@@ -79,6 +82,9 @@ function App() {
 
       <h1>StateHook</h1>
       <StateHook />
+
+      <h1>UseReducer</h1>
+      <UseReducer />
       <br />
       <br />
       <br />

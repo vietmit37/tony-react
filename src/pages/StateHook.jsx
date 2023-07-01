@@ -14,7 +14,7 @@ function StateHook() {
   const [todos, setTodos] = React.useState(createInitialTodos); // Passing the initializer function: you’re passing createInitialTodos, which is the function itself. If you pass a function to useState, React will only call it during initialization.
 
 
-  console.log('todos: ', todos)
+  console.log('State Hook: ', { number })
 
 
   function handleIncrement() {
