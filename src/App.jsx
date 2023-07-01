@@ -17,6 +17,7 @@ import LiftingStateUp from "./pages/LiftingStateUp";
 import From from './pages/Form';
 import StateHook from "./pages/StateHook";
 import UseReducer from "./pages/UseReducer";
+import UseEffect from './pages/UseEffect';
 
 // components
 
@@ -85,6 +86,9 @@ function App() {
 
       <h1>UseReducer</h1>
       <UseReducer />
+
+      <h1>UseEffect</h1>
+      {show ? <UseEffect /> : null}
       <br />
       <br />
       <br />
