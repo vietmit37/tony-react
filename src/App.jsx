@@ -14,10 +14,10 @@ import UserGreeting from "./pages/UserGreeting";
 import List from "./pages/List";
 import GenerateBox from "./pages/GenerateBox";
 import LiftingStateUp from "./pages/LiftingStateUp";
-import From from './pages/Form';
+import From from "./pages/Form";
 import StateHook from "./pages/StateHook";
-import UseReducer from "./pages/UseReducer";
-import UseEffect from './pages/UseEffect';
+import ColorToggle from "./pages/ColorToggle";
+import ToDoListReducer from "./pages/ToDoListReducer";
 
 // components
 
@@ -30,7 +30,7 @@ function App() {
     setShow((prevState) => !prevState); // toggle action
   }
 
-  console.log('App Component')
+  console.log("App Component");
 
   return (
     <>
@@ -84,11 +84,11 @@ function App() {
       <h1>StateHook</h1>
       <StateHook />
 
-      <h1>UseReducer</h1>
-      <UseReducer />
+      <h1>ColorToogle</h1>
+      <ColorToggle />
 
-      <h1>UseEffect</h1>
-      {show ? <UseEffect /> : null}
+      <h1> ToDoList</h1>
+      <ToDoListReducer />
       <br />
       <br />
       <br />

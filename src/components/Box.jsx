@@ -10,7 +10,7 @@ const Box = ({ text, handleChangeColor, color }) => {
   return (
     <>
       <div
-        className="wrapper-box"
+        className={`wrapper-box`}
         style={boxStyle}
         onClick={handleChangeColor}
       >

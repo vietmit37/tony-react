@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const UserGreeting = () => {
-  const [greeting, setGreeting] = useState('Hello Function Component!');
+  const [greeting, setGreeting] = useState("Hello Function Component!");
 
   return (
     <div>
@@ -9,7 +9,7 @@ const UserGreeting = () => {
       <input
         type="text"
         value={greeting}
-        onChange={event => setGreeting(event.target.value)}
+        onChange={(event) => setGreeting(event.target.value)}
       />
     </div>
   );
