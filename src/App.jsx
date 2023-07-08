@@ -18,6 +18,7 @@ import From from "./pages/Form";
 import StateHook from "./pages/StateHook";
 import ColorToggle from "./pages/ColorToggle";
 import ToDoListReducer from "./pages/ToDoListReducer";
+import UseEffect from "./pages/UseEffect";
 
 // components
 
@@ -89,6 +90,9 @@ function App() {
 
       <h1> ToDoList</h1>
       <ToDoListReducer />
+
+      <h1>UseEffect</h1>
+      {show && <UseEffect />}
       <br />
       <br />
       <br />

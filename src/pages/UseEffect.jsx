@@ -43,6 +43,33 @@ function UseEffect() {
     setPage(prevState => prevState + 1)
   }
 
+  React.useLayoutEffect(() => {
+    console.log('useLayoutEffect 1')
+
+    // only run when component re-render or will be unmounted
+    return () => {
+      console.log("clean up function useLayoutEffect 1")
+    }
+  }); // always run
+
+  React.useLayoutEffect(() => {
+    console.log('useLayoutEffect with dependency')
+
+    return () => {
+      console.log("clean up function useLayoutEffect with dependency")
+    }
+  }, [forceUpdate]); // re-run when dependencies change
+
+  React.useLayoutEffect(() => {
+    console.log('useLayoutEffect with empty dependency')
+
+     // only run when component re-render or will be unmounted
+    return () => {
+      console.log("clean up function useLayoutEffect with empty dependency")
+    }
+  }, []); // only run once when component first render
+
+
   console.log("-------------")
   console.log("render")
 

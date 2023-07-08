@@ -13,19 +13,16 @@ const todoReducer = (state, { type, payload }) => {
         ...state,
         isLoading: true,
       };
+
     case "ADD_TODO_SUCCESS":
-      const newTodo = {
-        id: uuidv4(),
-        text: payload,
-      };
       return {
-        listTodo: [...state.listTodo, newTodo],
+        listTodo: [...state.listTodo, payload],
         isLoading: false,
       };
+
     case "DELETE_TODO":
-      const filterList = state.listTodo.filter((item) => item.id !== payload);
       return {
-        listTodo: filterList,
+        listTodo: payload,
       };
     default:
       return state;
@@ -37,18 +34,25 @@ const ToDoListReducer = () => {
   const [state, dispatch] = useReducer(todoReducer, initialState);
 
   const handleAdd = () => {
-    const inputValue = refInput.current.value;
     if (inputValue.trim() !== "") {
       dispatch({ type: "ADD_TODO_PENDING" });
+      
+      const newTodo = {
+        id: uuidv4(),
+        text: inputValue,
+      };
+
       setTimeout(() => {
-        dispatch({ type: "ADD_TODO_SUCCESS", payload: inputValue });
+        dispatch({ type: "ADD_TODO_SUCCESS", payload: newTodo });
         refInput.current.value = "";
       }, 500);
     }
   };
   const handleDelete = (id) => {
-    dispatch({ type: "DELETE_TODO", payload: id });
+    const todoFiltered = state.listTodo.filter((item) => item.id !== id);
+    dispatch({ type: "DELETE_TODO", payload: todoFiltered });
   };
+
   return (
     <div>
       <input type="text" ref={refInput} />
