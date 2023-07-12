@@ -19,6 +19,7 @@ import StateHook from "./pages/StateHook";
 import ColorToggle from "./pages/ColorToggle";
 import ToDoListReducer from "./pages/ToDoListReducer";
 import UseEffect from "./pages/UseEffect";
+import UseContext from './pages/UseContext';
 
 // components
 
@@ -93,6 +94,9 @@ function App() {
 
       <h1>UseEffect</h1>
       {show && <UseEffect />}
+
+      <h1>UseContext</h1>
+      <UseContext />
       <br />
       <br />
       <br />
