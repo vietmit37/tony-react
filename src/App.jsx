@@ -20,7 +20,7 @@ import ColorToggle from "./pages/ColorToggle";
 import ToDoListReducer from "./pages/ToDoListReducer";
 import UseEffect from "./pages/UseEffect";
 import UseContext from './pages/UseContext';
-
+import UseRef from './pages/UseRef';
 // components
 
 // helper
@@ -97,6 +97,9 @@ function App() {
 
       <h1>UseContext</h1>
       <UseContext />
+
+      <h1>UseRef</h1>
+      <UseRef />
       <br />
       <br />
       <br />
